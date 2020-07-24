@@ -21,6 +21,7 @@ var client = new plaid.Client(
 
 const receivePublicToken = (req, res) => {
   // First, receive the public token and set it to a variable
+  console.log("\n\nreq: ", req.body, "\n\n");
   PUBLIC_TOKEN = req.body.public_token;
   // Second, exchange the public token for an access token
   client.exchangePublicToken(PUBLIC_TOKEN, function(error, tokenResponse) {

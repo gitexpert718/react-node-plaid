@@ -18,6 +18,7 @@ export default class Link extends Component {
     axios.post("/auth/public_token", {
       public_token: public_token
     });
+    console.log("metadata:\n", metadata);
   }
 
   handleOnExit() {
@@ -26,6 +27,7 @@ export default class Link extends Component {
   }
 
   handleClick(res) {
+    console.log("click handleClick")
     axios.get("/transactions").then(res => {
       this.setState({ transactions: res.data });
       console.log("transactions: ", this.state.transactions);
